@@ -1,0 +1,142 @@
+%--------------------------------------------
+% THIS IS CONFIG FILE OF QLAS V1.1.1%
+%--------------------------------------------
+CHECK_CONFIG_FILE = YES   
+% bool   & = YES: Output the configuration parameters actually read by the programme
+
+WRITE_SOLUTION_FILE =YES  
+% bool  &= YES: Enable output of solution files
+
+SCREEN_PRINT_MONITOR = YES
+% bool  & = YES: Enable output of restart files
+
+SET_OMP_THREADS = 1
+%long  & Number of OpenMP threads
+
+EXCEPTION_HANDLING = NO
+% bool  & = YES: Enable exception handling
+
+AUTO_EXCEPTION_HANDLING_INTERVAL = 6E2
+
+RESTART_CALCULATION = NO
+%bool   & = YES: Enable restart-from-checkpoint functionality
+
+WRITE_RESTART_FILE = NO
+%bool   & = YES: Enable output of restart files
+
+SLEEP_TO_RUN = 0E0
+%double  & Task delay time before executio
+
+%--------------------------------------------
+SUBSPACE_USE = YES
+%bool   & = YES: Enable subspace functionality
+
+SUBSPACE_METHOD = GMRES
+%str    & Select the specific subspace method 
+
+SUBSPACE_DIMENSION = 16
+%long   & Subspace dimension
+
+SUBSPACE_MAXSTEP = 0
+%long   & Maximum number of iterations for subspace method
+
+SUBSPACE_PRECISION = 1E-6
+%double & Precision of the subspace method
+
+%--------------------------------------------
+PRECONDITION_USE = YES
+%bool   & = YES: Enable matrix preconditioning
+
+PRECONDITIONER =ILUT
+% str    & Select the specific preconditioning method
+
+PRECON_ILUT_P = 6
+% long   & Number of retained elements in ILU preconditioning 
+
+PRECON_ILUT_TAU = 1E-6
+%double & Threshold for discarding elements in ILU preconditioning
+
+%--------------------------------------------
+QUANTUM_METHOD = VIRTUAL_QVQLS
+% str    & Select the specific quantum method
+
+QUANTUM_MAXSTEP = 0
+%long   & Maximum number of iterations for the quantum algorithm
+
+QUANTUM_PRECISION = 1E-6
+%double & Precision of quantum computation
+
+%--------------------------------------------
+VV_RANDOM_ANSATZ = 20
+% long   & Number of initial random ansätze
+
+VV_DIFFERENCE_STEP = 1E-3
+%double & Finite-difference step size for gradient calculation 
+
+VV_LOSS_MONITOR = 1E-3
+% double & Convergence criterion for the loss function 
+
+VV_LEARN_RATE = [1E-3, 5E-3, 1E-2, 2E-2, 4E-2, 7E-2, 1E-1, 2E-1, 3E-1, 5E-1]
+%vector & List of learning rates
+
+VV_USE_MULTI_ANSATZ = NO
+%bool &
+
+VV_WRITE_FILE = YES
+% bool   & = YES: Enable output of VQLS training logs
+
+%--------------------------------------------
+NV_RANDOM_ANSATZ = 10
+NV_DIFFERENCE_STEP = 5E-2
+NV_LOSS_MONITOR = 1E-3
+NV_LEARN_RATE = [1E-2, 5E-2, 1E-1, 2E-1, 4E-1, 7E-1, 1E0, 2E0, 3E0, 4E0]
+NV_TASK_WAY = CLOUD
+NV_API = 89a41c1dfe7b2e6fb4a430fddfb8f747edd7a272e516ac532798388df0d6a2dc416856593358656b68744b646d327037
+
+NV_SHOTS = 1000
+%long   & Number of shots for submitted tasks
+
+NV_QUERY_INTERVAL = 2E0
+%double & Asynchronous polling interval for results
+
+NV_QUERY_TIMEOUT = 2E5
+%
+
+NV_USE_REMAP = NO
+%bool   & = YES: Enable user-defined qubit mapping 
+
+NV_QUBIT_REMAP = {0:1, 1:2}
+%map    & User-defined qubit mapping scheme
+
+NV_USE_AMEND = NO
+% bool   & = YES: Enable readout error mitigation 
+
+NV_TASK_LIMIT = 0
+% long   & Maximum number of task submissions
+
+NV_WRITE_FILE = YES
+
+%--------------------------------------------
+TOMOGRAPHY_USE = NO
+%bool   & = YES: Enable quantum state tomography
+
+TOMOGRAPHY_METHOD = DENSE
+%str    & Select the quantum state tomography method
+
+%--------------------------------------------
+HHL_PRECISION = 0
+%--------------------------------------------
+NOISE_USE = YES
+%bool   & = YES: Enable noisy virtual machine
+
+RY_NOISE_ERROR = 0.1
+%double & Noise coefficient of the RY gate
+
+CNOT_NOISE_ERROR = 0.1
+%double & Noise coefficient of the CNOT gate
+
+%--------------------------------------------
+QRAM_DATA_SIZE = 32
+QRAM_EPS = 1E-3
+%--------------------------------------------
+END
